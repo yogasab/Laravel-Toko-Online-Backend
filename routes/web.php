@@ -19,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', 'Web\Dashboard\DashboardController@index')->name('dashboard.index');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
