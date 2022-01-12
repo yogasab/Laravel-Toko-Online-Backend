@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Web\Dashboard\DashboardController@index')->name('dashboard.index');
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
