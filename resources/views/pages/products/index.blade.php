@@ -9,6 +9,13 @@
           <h4 class="box-title">Daftar Barang</h4>
         </div>
         <div class="card-header">
+          {{-- Flash Message --}}
+          @if ($message= Session::get('success'))
+          <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $message }}</strong>
+          </div>
+          @endif
           <div class="table-stats order-table ov-h">
             <table class="table">
               <thead>
@@ -22,8 +29,8 @@
                 </tr>
               </thead>
               <tbody>
+                @forelse ($products as $product)
                 <tr>
-                  @forelse ($products as $product)
                   <td>{{ $product->id }}</td>
                   <td>{{ $product->name }}</td>
                   <td>{{ $product->type }}</td>
@@ -44,7 +51,8 @@
                       </button>
                     </form>
                   </td>
-                  @empty
+                </tr>
+                @empty
                 <tr>
                   <td colspan="6" class="text-center p-5">
                     Tidak ada produk

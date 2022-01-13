@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers\Web\Product;
 
-use App\Http\Controllers\Controller;
 use App\Model\Product;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductRequest;
 
 class ProductController extends Controller
 {
@@ -26,7 +28,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.products.create');
     }
 
     /**
@@ -35,9 +37,14 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        //
+        $validatedData = $request->all();
+        $validatedData['slug'] = Str::slug($request->name);
+
+        Product::create($validatedData);
+
+        return redirect()->route('products.index')->with('success', 'Product added successfully');
     }
 
     /**

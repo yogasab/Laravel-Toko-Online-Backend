@@ -29,6 +29,7 @@
     @include('includes.navbar')
     <!-- Content -->
     <div class="content">
+      {{-- @include('flash-message') --}}
       @yield('content')
     </div>
     <!-- /.content -->

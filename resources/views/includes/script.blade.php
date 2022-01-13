@@ -21,11 +21,22 @@
 
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
+<script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
+<script>
+	ClassicEditor
+					.create( document.querySelector( '.ckeditor' ) )
+					.then( editor => {
+									console.log( editor );
+					} )
+					.catch( error => {
+									console.error( error );
+					} );
+</script>
 <script src="{{ asset('assets/js/init/fullcalendar-init.js') }}"></script>
 
 <!--Local Stuff-->
 <script>
-    jQuery(document).ready(function($) {
+	jQuery(document).ready(function($) {
 					"use strict";
 
 					// Pie chart flotPie1
