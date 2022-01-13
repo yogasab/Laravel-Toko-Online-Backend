@@ -37,10 +37,10 @@
                   <td>{{ $product->price }}</td>
                   <td>{{ $product->quantity }}</td>
                   <td>
-                    <a href="#" class="btn btn-info btn-sm">
+                    <a href="{{ route('products.edit', $product->slug) }}" class="btn btn-info btn-sm">
                       <i class="fa fa-picture-o"></i>
                     </a>
-                    <a href="#" class="btn btn-primary btn-sm">
+                    <a href="{{ route('products.edit', $product->slug) }}" class="btn btn-primary btn-sm">
                       <i class="fa fa-pencil"></i>
                     </a>
                     <form action="#" method="POST" class="d-inline">
