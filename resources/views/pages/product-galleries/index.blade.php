@@ -6,7 +6,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="box-title">Daftar Barang</h4>
+          <h4 class="box-title">Product Galleries</h4>
         </div>
         <div class="card-header">
           {{-- Flash Message --}}
@@ -22,28 +22,23 @@
                 <tr>
                   <th>No</th>
                   <th>Name</th>
-                  <th>Type</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
+                  <th>Photo</th>
+                  <th>Default</th>
                   <th>Action</th>
                 </tr>
               </thead>
               <tbody>
                 @forelse ($products as $product)
                 <tr>
-                  <td>{{ $product->id }}</td>
-                  <td>{{ $product->name }}</td>
-                  <td>{{ $product->type }}</td>
-                  <td>Rp{{ number_format($product->price) }}</td>
-                  <td>{{ $product->quantity }}</td>
+                  <td>{{ $loop->iteration }}</td>
+                  <td>{{ $product->product->name }}</td>
                   <td>
-                    <a href="{{ route('products.edit', $product->slug) }}" class="btn btn-info btn-sm">
-                      <i class="fa fa-picture-o"></i>
-                    </a>
-                    <a href="{{ route('products.edit', $product->slug) }}" class="btn btn-primary btn-sm">
-                      <i class="fa fa-pencil"></i>
-                    </a>
-                    <form action="{{ route('products.destroy', $product->slug) }}" method="POST" class="d-inline">
+                    <img src="{{ Storage::url($product->photo) }}" alt="">
+                  </td>
+                  <td>{{ $product->is_default ? 'Yes' : 'No' }}</td>
+                  <td>
+                    <form action="{{ route('product-galleries.destroy', $product->id) }}" method="POST"
+                      class="d-inline">
                       @csrf
                       @method('DELETE')
                       <button class="btn btn-danger btn-sm">

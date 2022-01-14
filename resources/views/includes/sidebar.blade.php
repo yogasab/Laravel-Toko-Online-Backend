@@ -8,18 +8,18 @@
         </li>
         <li class="menu-title">Barang</li><!-- /.menu-title -->
         <li class="">
-          <a href="{{ route('products.index') }}"> <i class="menu-icon fa fa-list"></i>Lihat Barang</a>
+          <a href="{{ route('products.index') }}"> <i class="menu-icon fa fa-list"></i>Products</a>
         </li>
         <li class="">
-          <a href="{{ route('products.create') }}"> <i class="menu-icon fa fa-plus"></i>Tambah Barang</a>
+          <a href="{{ route('products.create') }}"> <i class="menu-icon fa fa-plus"></i>Add Products</a>
         </li>
 
         <li class="menu-title">Foto Barang</li><!-- /.menu-title -->
         <li class="">
-          <a href="#"> <i class="menu-icon fa fa-list"></i>Lihat Foto Barang</a>
+          <a href="{{ route('product-galleries.index') }}"> <i class="menu-icon fa fa-list"></i>Product Galleries</a>
         </li>
         <li class="">
-          <a href="#"> <i class="menu-icon fa fa-plus"></i>Tambah Foto Barang</a>
+          <a href="{{ route('product-galleries.create') }}"> <i class="menu-icon fa fa-plus"></i>Add Product Photos</a>
         </li>
 
         <li class="menu-title">Transaksi</li><!-- /.menu-title -->

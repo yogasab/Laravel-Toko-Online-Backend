@@ -24,5 +24,6 @@ Route::get('/', 'Web\Dashboard\DashboardController@index')->name('dashboard.inde
 Auth::routes(['register' => false]);
 
 Route::resource('products', 'Web\Product\ProductController');
+Route::resource('product-galleries', 'Web\Product\ProductGalleryController');
 
 // Route::get('/home', 'HomeController@index')->name('home');
