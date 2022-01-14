@@ -95,6 +95,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
+        $product->galleries()->delete();
 
         return redirect()->back()->with('success', "{$product->name} deleted successfully");
     }
