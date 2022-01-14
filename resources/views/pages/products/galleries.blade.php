@@ -6,7 +6,7 @@
     <div class="col-12">
       <div class="card">
         <div class="card-body">
-          <h4 class="box-title">Daftar Barang</h4>
+          <h4 class="box-title">Galleries for {{ $product->name }}</strong></h4>
         </div>
         <div class="card-header">
           {{-- Flash Message --}}
@@ -21,23 +21,23 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Name</th>
-                  <th>Type</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Action</th>
+                  <th>Photo</th>
+                  <th>Default</th>
                 </tr>
               </thead>
               <tbody>
                 @forelse ($products as $product)
                 <tr>
                   <td>{{ $loop->iteration }}</td>
-                  <td>{{ $product->name }}</td>
-                  <td>{{ $product->type }}</td>
+                  <td>
+                    <img src="{{ Storage::url($product->photo) }}" alt="">
+                  </td>
+                  <td>{{ $product->is_default ? 'Yes' : 'No' }}</td>
+                  {{-- <td>{{ $product->type }}</td>
                   <td>Rp{{ number_format($product->price) }}</td>
                   <td>{{ $product->quantity }}</td>
                   <td>
-                    <a href="{{ route('products.galleries', $product->slug) }}" class="btn btn-info btn-sm">
+                    <a href="{{ route('products.edit', $product->slug) }}" class="btn btn-info btn-sm">
                       <i class="fa fa-picture-o"></i>
                     </a>
                     <a href="{{ route('products.edit', $product->slug) }}" class="btn btn-primary btn-sm">
@@ -50,7 +50,7 @@
                         <i class="fa fa-trash"></i>
                       </button>
                     </form>
-                  </td>
+                  </td> --}}
                 </tr>
                 @empty
                 <tr>

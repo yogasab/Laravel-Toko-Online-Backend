@@ -16,10 +16,10 @@ class Product extends Model
 
     protected $hidden = [];
 
-    // public function galleries(): HasMany
-    // {
-    //     return $this->hasMany(ProductGallery::class, 'products_id');
-    // }
+    public function galleries(): HasMany
+    {
+        return $this->hasMany(ProductGallery::class, 'products_id');
+    }
 
     public function getRouteKeyName()
     {

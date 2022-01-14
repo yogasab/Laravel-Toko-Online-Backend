@@ -98,4 +98,14 @@ class ProductController extends Controller
 
         return redirect()->back()->with('success', "{$product->name} deleted successfully");
     }
+
+    public function galleries(Request $request, Product $product)
+    {
+        $products = $product->galleries;
+
+        return view('pages.products.galleries')->with([
+            'products' => $products,
+            'product' => $product
+        ]);
+    }
 }
