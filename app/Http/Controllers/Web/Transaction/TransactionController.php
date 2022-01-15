@@ -98,4 +98,16 @@ class TransactionController extends Controller
     {
         //
     }
+
+    public function setStatus(Transaction $transaction, Request $request)
+    {
+        $validatedStatus = $request->validate([
+            'status' => 'required|in:PENDING,SUCCESS,FAILED'
+        ]);
+
+        $transaction->transaction_status = $request->status;
+        $transaction->save();
+
+        return redirect()->route('transactions.index')->with('success', 'Status updated successfully');
+    }
 }

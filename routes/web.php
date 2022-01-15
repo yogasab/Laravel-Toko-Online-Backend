@@ -24,8 +24,10 @@ Route::get('/', 'Web\Dashboard\DashboardController@index')->name('dashboard.inde
 Auth::routes(['register' => false]);
 
 Route::get('galleries/{product}', 'Web\Product\ProductController@galleries')->name('products.galleries');
-Route::resource('products', 'Web\Product\ProductController');
-Route::resource('product-galleries', 'Web\Product\ProductGalleryController');
-Route::resource('transactions', 'Web\Transaction\TransactionController');
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('products', 'Web\Product\ProductController');
+
+Route::resource('product-galleries', 'Web\Product\ProductGalleryController');
+
+Route::resource('transactions', 'Web\Transaction\TransactionController');
+Route::get('transactions/{transaction}/set-status', 'Web\Transaction\TransactionController@setStatus')->name('transactions.status');
