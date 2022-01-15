@@ -61,8 +61,8 @@
                       <i class="fa fa-times"></i>
                     </a> --}}
                     @endif
-                    <a href="#mymodal" data-remote="{{ route('transactions.show', $transaction->id) }}"
-                      data-toggle="modal" data-target="#mymodal"
+                    <a href="#modalInfo" data-remote="{{ route('transactions.show', $transaction->id) }}"
+                      data-toggle="modal" data-target="#modalInfo"
                       data-title="Transaction Detail {{ $transaction->uuid }}" class="btn btn-info btn-sm">
                       <i class="fa fa-eye"></i>
                     </a>
