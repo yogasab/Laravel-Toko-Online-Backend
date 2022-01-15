@@ -229,7 +229,7 @@
 
 <script>
 	jQuery(document).ready(function($){
-			$('#modalInfo').on('show.bs.modal', function(e){
+			$('#mymodal').on('show.bs.modal', function(e){
 					var button = $(e.relatedTarget);
 					var modal = $(this);
 					modal.find('.modal-body').load(button.data("remote"));
@@ -238,7 +238,7 @@
 	});
 </script>
 
-<div class="modal" id="modalInfo" tabindex="-1" role="dialog">
+<div class="modal" id="mymodal" tabindex="-1" role="dialog">
 	<div class="modal-dialog modal-lg" role="document">
 		<div class="modal-content">
 			<div class="modal-header">

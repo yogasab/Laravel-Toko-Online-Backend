@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web\Transaction;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\TransactionRequest;
 use App\Model\Transaction;
 use Illuminate\Http\Request;
 
@@ -64,9 +65,11 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Transaction $transaction)
     {
-        //
+        return view('pages.transactions.edit')->with([
+            'transaction' => $transaction
+        ]);
     }
 
     /**
@@ -76,9 +79,13 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(TransactionRequest $request, Transaction $transaction)
     {
-        //
+        $validatedData = $request->all();
+
+        $transaction->update($validatedData);
+
+        return redirect()->route('transactions.index')->with('success', 'Transaction updated successfully');
     }
 
     /**
