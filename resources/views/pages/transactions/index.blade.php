@@ -5,7 +5,7 @@
   <div class="row">
     <div class="col-12">
       <div class="card">
-        <div class="card-body">
+        <div class="card-body--">
           <h4 class="box-title">Transactions List</h4>
         </div>
         <div class="card-header">
@@ -43,7 +43,7 @@
                       @elseif ($transaction->transaction_status === 'SUCCESS')
                       <span class="badge badge-success">
                         @elseif ($transaction->transaction_status === 'FAILED')
-                        <span class="badge badge-success">
+                        <span class="badge badge-danger">
                           @else
                           <span>
                             @endif
