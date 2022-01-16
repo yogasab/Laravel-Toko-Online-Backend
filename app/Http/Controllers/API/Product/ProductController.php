@@ -13,7 +13,7 @@ class ProductController extends Controller
     {
         $id = $request->input('id');
         $name = $request->input('name');
-        $limit = $request->input('limit');
+        $limit = $request->input('limit', 6);
         $slug = $request->input('slug');
         $type = $request->input('type');
         $price_from = $request->input('price_from');
@@ -24,7 +24,31 @@ class ProductController extends Controller
             if ($products)
                 return ResponseFormatter::success($products, 'Products fetched successfully');
             else
-                return ResponseFormatter::errors(null, 'Products failed fetched', 404);
+                return ResponseFormatter::errors(null, 'Products not found', 404);
         }
+
+        if ($slug) {
+            $products = Product::with('galleries')->where('slug', $slug)->first();
+            if ($products)
+                return ResponseFormatter::success($products, 'Products fecthed succesfully');
+            else
+                return ResponseFormatter::errors(null, 'Products not found', 404);
+        }
+
+        $products = Product::with('galleries');
+
+        if ($name)
+            $products->where('name', 'LIKE', '%' . $name . '%');
+
+        if ($type)
+            $products->where('type', 'LIKE', '%' . $type . '%');
+
+        if ($price_from)
+            $products->where('price', '>=', $price_from);
+
+        if ($price_to)
+            $products->where('price', '<=', $price_to);
+
+        return ResponseFormatter::success($products->paginate($limit), 'Products fetched successfully');
     }
 }
