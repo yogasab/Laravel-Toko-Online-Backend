@@ -48,7 +48,8 @@ class ProductGalleryController extends Controller
     {
         $validatedData = $request->all();
         $validatedData['photo'] = $request->file('photo')->store(
-            'public/images'
+            'assets/product',
+            'public'
         );
         ProductGallery::create($validatedData);
 
