@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('api/v1')->get('products', 'API\Product\ProductController@all')->name('products-api.all');
 Route::prefix('api/v1')->post('checkouts', 'API\Checkout\CheckoutController@checkout');
+Route::prefix('api/v1')->get('transactions/{transaction}', 'API\Transaction\TransactionController@get');
