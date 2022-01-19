@@ -7,8 +7,25 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+# Summary 
+Backend documentation built with Laravel, for frontend Web [Vue Frontend](https://github.com/yogasab/Vue-Toko-Online-Frontend)
+
 ## Documentation
-- [Docs](https://documenter.getpostman.com/view/12308942/UVXknuqJ)
+- [API Documentaion](https://documenter.getpostman.com/view/12308942/UVXknuqJ)
+
+## Preview Admin CMS Dashboard
+- Dashboard 
+![image](https://user-images.githubusercontent.com/68288783/150059440-75ce632f-c775-42cf-8911-66a578f851d5.png)
+- Products Index
+![image](https://user-images.githubusercontent.com/68288783/150059484-e5773851-0d32-40fb-9327-bbfb011b1f93.png)
+- Add Product
+![image](https://user-images.githubusercontent.com/68288783/150059549-3da5df54-cffd-43d4-b641-f04e507a230e.png)
+- Product Gallery Index
+![image](https://user-images.githubusercontent.com/68288783/150059590-2a3fc896-1132-4759-9418-fda87b9fe863.png)
+- Add Product Gallery
+![image](https://user-images.githubusercontent.com/68288783/150059631-f68a3781-cc6d-4ed4-90df-dfbcfdfc72f8.png)
+- Transactions
+![image](https://user-images.githubusercontent.com/68288783/150059665-94f2b692-923a-487e-a177-81572af7f8c7.png)
 
 ## About Laravel
 
